@@ -1,0 +1,28 @@
+print("*****************************************************************")
+print("           Welcome to the electricity bill calculator!           ")
+print("*****************************************************************")
+
+unit = int(input("Enter the amount of units of electricity you consumed: "))
+unitprice = 0
+
+if unit <=100:
+    unitprice = unit *13.85
+elif unit >=101 and unit <=200:
+    unitprice = unit * 15.86
+elif unit >=201 and unit <=300:
+    unitprice = unit * 16.83
+elif unit >=301 and unit <=700:
+    unitprice = unit * 18.54
+elif unit >= 701:
+    unitprice = unit*20.94
+
+nisur = unit * 0.1
+fcsur = unit * 0.43
+
+bill = unitprice + nisur + fcsur + 35
+totalbill = bill + (bill*0.12)
+
+xbill = totalbill + (totalbill* 0.0834)
+
+print(f"Amount payable within due date: {totalbill}")
+print(f"Amount after due date: {xbill}")
